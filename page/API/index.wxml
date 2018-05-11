@@ -1,28 +1,28 @@
-<view class="index">
-  <view class="index-hd">
-    <image class="index-logo" src="resources/kind/logo.png"></image>
-    <view class="index-desc">以下将演示小程序接口能力，具体属性参数详见小程序开发文档。</view>
-  </view>
-  <view class="index-bd">
-    <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <view class="kind-list-item">
-          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-            <view class="kind-list-text">{{item.name}}</view>
-            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
-          </view>
-          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
-            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
-                <navigator url="pages/{{page.url}}" class="navigator">
-                  <view class="navigator-text">{{page.zh}}</view>
-                  <view class="navigator-arrow"></view>
-                </navigator>
-              </block>
-            </view>
-          </view>
-        </view>
-      </block>
+<view class="selectMode">
+    <text>五子棋</text>
+    <label for="selectMode">选择模式:</label>
+    <select name="selectMode" id="selectMode">
+        <option value="1">双人对战</option>
+        <option value="2">电脑版本</option>
+    </select>
+</view>
+<view class="board-outer">
+    <view class="board" id="board">
+        <image src= "../../image/board.jpg" class='board-bg'></image>
     </view>
-  </view>
+</view>
+
+<view class="status">
+</view>
+<view class="btns">
+    <button href="javascript:;" class="btn_primary" id='start'>开始</button>
+    <button href="javascript:;" class="btn_warn" id='fail'>认输</button>
+    <button href="javascript:;" class="btn_default" id='back'>悔棋</button>
+    <button href="javascript:;" class="btn_tips" id='forward'>撤销悔棋</button>
+</view>
+<view class="alert" style="display: none">
+    <view class="alertContent">
+
+    </view>
+    <button href="javascript:;" class="alertBtn">确定</button>
 </view>

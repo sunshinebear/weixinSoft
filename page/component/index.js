@@ -1,3 +1,6 @@
+var main = require("../../board/main.wxs")
+
+
 Page({
   data: {
     list: [

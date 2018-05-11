@@ -224,3 +224,159 @@ form{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+html {
+  font-size: 10px;
+}
+
+@media (min-width: 370px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (min-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+}
+h1 {
+  color: #3cc51f;
+  font-size: 2rpx;
+  margin: 1rpx;
+  text-align: center;
+}
+p {
+  font-size: 1.4rpx;
+  color: #999;
+  text-align: center;
+}
+.board {
+  position: relative;
+  width: 600rpx;
+  height: 600rpx;
+  margin: 1.5rpx auto;
+  background-size: 100%;
+}
+.board .board-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.board .chessman {
+  height: 1.7rpx;
+  width: 1.7rpx;
+  margin-left: -0.85rpx;
+  margin-top: -0.85rpx;
+  border-radius: .85rpx;
+  background: white;
+  position: absolute;
+}
+.board .chessman.black {
+  background: black;
+}
+.board .indicator {
+  box-sizing: border-box;
+  height: 2rpx;
+  width: 2rpx;
+  margin-left: -1rpx;
+  margin-top: -1rpx;
+  border: 1px solid #EF4F4F;
+  position: absolute;
+}
+.buttons {
+  width: 30rpx;
+  margin: auto;
+  padding-bottom: 1rpx;
+}
+.status {
+  text-align: center;
+  margin: 1rpx;
+  font-size: 1.4rpx;
+  height: 2rpx;
+  line-height: 2rpx;
+  color: #666;
+}
+@media screen and (min-width: 1024px) {
+  .weui_dialog,
+  .weui_toast {
+    left: 32.5%;
+  }
+}
+footer {
+  margin: 1rpx;
+  text-align: center;
+  color: gray;
+}
+.btns {
+  text-align: center;
+}
+.btns a {
+  display: inline-block;
+  text-decoration: none;
+  width: 6rpx;
+  font-size: 1rpx;
+  text-align: center;
+  height: 3rpx;
+  line-height: 3rpx;
+  margin-left: 1rpx;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .5rpx;
+}
+.btns .btn_primary {
+  color: white;
+  background: #04BE02;
+}
+.btns .btn_warn {
+  color: white;
+  background: #EF4F4F;
+}
+.btns .btn_default {
+  color: black;
+  background: whitesmoke;
+}
+.btns .btn_tips {
+  background: #31b0d5;
+  color: #fff;
+}
+.alert {
+  position: absolute;
+  width: 26rpx;
+  height: 13rpx;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .5rpx;
+  left: 50%;
+  top: 20%;
+  margin-left: -13rpx;
+  background: white;
+}
+.alertContent {
+  font-size: 2rpx;
+  color: #31b0d5;
+  text-align: center;
+  margin-top: 3rpx;
+}
+.alertBtn {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rpx;
+  height: 3rpx;
+  line-height: 3rpx;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .5rpx;
+  background: #04BE02;
+  color: white;
+}
+.selectMode {
+  text-align: center;
+  font-size: 1.5rpx;
+}
