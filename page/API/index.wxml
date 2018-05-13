@@ -15,14 +15,18 @@
 <view class="status">
 </view>
 <view class="btns">
-    <button href="javascript:;" class="btn_primary" id='start'>开始</button>
-    <button href="javascript:;" class="btn_warn" id='fail'>认输</button>
-    <button href="javascript:;" class="btn_default" id='back'>悔棋</button>
-    <button href="javascript:;" class="btn_tips" id='forward'>撤销悔棋</button>
+    <button href="javascript:;" class="btn_primary" id='start'
+    bindtap = 'start_btn'>开始</button>
+    <button href="javascript:;" class="btn_warn" id='fail'
+    bindtap = 'fail_btn'>认输</button>
+    <button href="javascript:;" class="btn_default" id='back'
+    bindtap = 'back_btn'>悔棋</button>
+    <button href="javascript:;" class="btn_tips" id='forward'
+    bindtap = 'forward_btn'>撤销悔棋</button>
 </view>
 <view class="alert" style="display: none">
     <view class="alertContent">
 
     </view>
-    <button href="javascript:;" class="alertBtn">确定</button>
+    <button href="javascript:;" class="alertBtn" bindtap='alert_btn'>确定</button>
 </view>

@@ -19,27 +19,28 @@ var Board = function (container, status) {
   this.forwardSteps = []; //撤销悔棋
 
   this.started = false;
-  var self = this;
+
 
   /*标志位*/
   this.isWhiteTurn = true;
-
-  this.container.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (self.lock || !self.started) return;
-    var y, x;
-    x = Math.round(((e.clientX - self.offsetLeft) - self.offset) / self.boardItemWidth);
-    y = Math.round(((e.clientY - self.offsetTop) - self.offset) / self.boardItemWidth);
-    if (self.isComVersion)
-      self.set(x, y, R.hum);
-    else {
-      if (self.isWhiteTurn)
-        self.set(x, y, R.hum);
-      else
-        self.set(x, y, R.com);
-    }
-  });
+  
+  // let  myself = this;
+  // this.container.addEventListener("click", function (e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   if (myself.lock || !myself.started) return;
+  //   var y, x;
+  //   x = Math.round(((e.clientX - myself.offsetLeft) - myself.offset) / myself.boardItemWidth);
+  //   y = Math.round(((e.clientY - myself.offsetTop) - myself.offset) / myself.boardItemWidth);
+  //   if (myself.isComVersion)
+  //     myself.set(x, y, R.hum);
+  //   else {
+  //     if (myself.isWhiteTurn)
+  //       myself.set(x, y, R.hum);
+  //     else
+  //       myself.set(x, y, R.com);
+  //   }
+  // });
 
   this.setStatus("请点击开始按钮");
 };
@@ -104,16 +105,15 @@ Board.prototype._set = function (x, y, role) {
   this.steps.push([x, y]);
   this.draw(x, y);
   var winner = W(this.board);
-  var self = this;
   if (winner == R.com) {
     if (this.isComVersion)
       Util.alert("电脑赢了！");
     else
       Util.alert("黑棋赢了");
-    self.stop();
+    this.stop();
   } else if (winner == R.hum) {
     Util.alert("白棋赢了！");
-    self.stop();
+    this.stop();
   }
 }
 
@@ -166,38 +166,38 @@ Board.prototype.forward = function (count) {
   }
 };
 
-var b = new Board($("#board"), $(".status"));
-$("#start").addEventListener('click', function () {
-  b.start();
-});
+// var b = new Board($("#board"), $(".status"));
+// $("#start").addEventListener('click', function () {
+//   b.start();
+// });
 
-$("#fail").addEventListener('click', function () {
-  if (confirm("确定认输吗?")) {
-    b.stop();
-  }
-});
+// $("#fail").addEventListener('click', function () {
+//   if (confirm("确定认输吗?")) {
+//     b.stop();
+//   }
+// });
 
-$("#back").addEventListener('click', function () {
-  b.back();
-});
+// $("#back").addEventListener('click', function () {
+//   b.back();
+// });
 
-$("#forward").addEventListener('click', function () {
-  b.forward();
-});
+// $("#forward").addEventListener('click', function () {
+//   b.forward();
+// });
 
-$("#alertBtn").addEventListener('click', function () {
-  Util.css($("#alert"), 'display', 'none');
-});
+// $("#alertBtn").addEventListener('click', function () {
+//   Util.css($("#alert"), 'display', 'none');
+// });
 
-$("#selectMode").addEventListener('change', function (e) {
-  var val = e.target.value;
-  if (val == '1') {
-    b.backCount = 1;
-    b.isComVersion = false;
-    b.stop();
-  } else {
-    b.backCount = 2;
-    b.isComVersion = true;
-    b.stop();
-  }
-});
+// $("#selectMode").addEventListener('change', function (e) {
+//   var val = e.target.value;
+//   if (val == '1') {
+//     b.backCount = 1;
+//     b.isComVersion = false;
+//     b.stop();
+//   } else {
+//     b.backCount = 2;
+//     b.isComVersion = true;
+//     b.stop();
+//   }
+// });
