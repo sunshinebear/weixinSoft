@@ -1,11 +1,11 @@
-var evaluate = require("./evaluate.wxs");
-var hasNeighbor = require("./neighbor.wxs");
-var R = require("./role.wxs");
+var evaluate = require("./evaluate");
+var hasNeighbor = require("./neighbor.js");
+var R = require("./role.js");
 
 function deepCopy(obj) {
     var out = [], i = 0, len = obj.length;
     for (; i < len; i++) {
-        if (typeof obj[i] == 'object') {
+        if (obj[i] instanceof Array) {
             out[i] = deepCopy(obj[i]);
         }
         else out[i] = obj[i];

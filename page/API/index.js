@@ -1,3 +1,4 @@
+let board = require("../../board/main").board;
 Page({
 	start_btn:function (argument) {
 		// body...
@@ -16,5 +17,8 @@ Page({
 	alert_btn:function (argument) {
 		// body...
 
+	},
+	board_tap:function (e) {
+		debugger;
 	}
 })

@@ -7,7 +7,7 @@
     </select>
 </view>
 <view class="board-outer">
-    <view class="board" id="board">
+    <view class="board" id="board" bindtap ='board_tap'>
         <image src= "../../image/board.jpg" class='board-bg'></image>
     </view>
 </view>

@@ -1,4 +1,4 @@
-var R = require("./role.wxs");
+var R = require("./role");
 //有邻居
 var hasNeighbor = function (board, point, distance, count) {
     var len = board.length;
