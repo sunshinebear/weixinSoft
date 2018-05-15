@@ -1,4 +1,5 @@
 const openIdUrl = require('./config').openIdUrl
+let util = require('./util/util').Util;
 
 App({
   onLaunch: function () {
@@ -12,7 +13,8 @@ App({
   },
   globalData: {
     hasLogin: false,
-    openid: null
+    openid: null,
+    eventCenter:new util.event()
   },
   // lazy loading openid
   getUserOpenId: function(callback) {

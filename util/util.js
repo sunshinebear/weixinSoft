@@ -1,35 +1,34 @@
-(function (win) {
-    var doc = win.document;
-    win.$ = function (str) {
-        return doc.querySelector(str);
-    };
-    win.Util = {
-        css: function (_ele, _name, value) {
-            if (arguments.length == 2 && _name) {
-                return _ele.style[_name] || doc.defaultView.getComputedStyle(_ele, null)[_name];
-            }
-            else if (arguments.length == 3 && value)
-                _ele.style[_name] = value;
-        },
-        addClass: function (_ele, _name) {
-            var className = _ele.class || _ele.className;
-            var reg = reg = new RegExp('(\\s|^)' + _name + '(\\s|$)');
-            if (!className.match(reg)) {
-                className = className + (className ? ' ' : '') + _name;
-                _ele.className = className;
-            }
-        },
-        remove:function (_ele) {
-            while (_ele.firstChild){
-                _ele.removeChild(_ele.firstChild);
-            }
-        },
-        alert:function (msg) {
-            doc.getElementById("alertContent").innerHTML = msg;
-            doc.getElementById("alert").style['display'] = 'block';
-        }
-    }
-})(window);
+function EventEmitter(){
+  this.events={};
+}
+
+EventEmitter.prototype.on = function(name,cb){
+  if(!this.events[name])
+    this.events[name] =[];
+  this.events[name].push(cb);
+}
+
+EventEmitter.prototype.emit = function(name){
+  let _args = [].slice.call(arguments);
+  _args.splice(0,1);
+  if(this.events[name] instanceof Array){
+      this.events[name].forEach(item=>{
+          item(_args);
+      });
+  }
+}
+
+EventEmitter.prototype.remove = function(name,cb){
+  if(this.events[name] instanceof Array){
+    var _index = this.events[name].indexOf(cb);
+    this.events[name].splice(_index,1);
+  }
+}
+
+
+let Util = {
+  event:EventEmitter
+}
 
 function formatTime(time) {
   if (typeof time !== 'number' || time < 0) {
@@ -65,5 +64,6 @@ function formatLocation(longitude, latitude) {
 
 module.exports = {
   formatTime: formatTime,
-  formatLocation: formatLocation
+  formatLocation: formatLocation,
+  Util:Util
 }

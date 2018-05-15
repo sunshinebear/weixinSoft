@@ -1,18 +1,20 @@
 <view class="selectMode">
-    <text>五子棋</text>
-    <label for="selectMode">选择模式:</label>
-    <select name="selectMode" id="selectMode">
-        <option value="1">双人对战</option>
-        <option value="2">电脑版本</option>
-    </select>
+    <picker bindchange="bindPickerChange" value="{{range_index}}" range="{{range}}" id="selectMode">
+        <view class="picker">
+          <label class="picker-label">选择模式:</label>{{range[range_index]}}
+        </view>
+    </picker>
 </view>
 <view class="board-outer">
     <view class="board" id="board" bindtap ='board_tap'>
         <image src= "../../image/board.jpg" class='board-bg'></image>
+        <view wx:for="{{array}}" class="{{item.class}}" id="{{item.id}}"
+        style="{{item.style}}" wx:key="*this"></view>
     </view>
 </view>
 
 <view class="status">
+    {{status}}
 </view>
 <view class="btns">
     <button href="javascript:;" class="btn_primary" id='start'
@@ -24,9 +26,9 @@
     <button href="javascript:;" class="btn_tips" id='forward'
     bindtap = 'forward_btn'>撤销悔棋</button>
 </view>
-<view class="alert" style="display: none">
+<view class="alert"  id="alert" hidden="{{!showAlert}}">
     <view class="alertContent">
-
+        {{alertContent}}
     </view>
     <button href="javascript:;" class="alertBtn" bindtap='alert_btn'>确定</button>
 </view>

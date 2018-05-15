@@ -11,6 +11,9 @@ checkbox, radio{
 button{
   margin-top: 20rpx;
   margin-bottom: 20rpx;
+  margin-right: 20px;
+  display: inline-block;
+  width: 250rpx;
 }
 form{
   width: 100%;
@@ -269,11 +272,11 @@ p {
   height: 100%;
 }
 .board .chessman {
-  height: 1.7rpx;
-  width: 1.7rpx;
-  margin-left: -0.85rpx;
-  margin-top: -0.85rpx;
-  border-radius: .85rpx;
+  height: 37.5rpx;
+  width: 37.5rpx;
+  margin-left: -15.85rpx;
+  margin-top: -15.85rpx;
+  border-radius: 37.5rpx;
   background: white;
   position: absolute;
 }
@@ -296,10 +299,10 @@ p {
 }
 .status {
   text-align: center;
-  margin: 1rpx;
-  font-size: 1.4rpx;
-  height: 2rpx;
-  line-height: 2rpx;
+  margin: 10rpx;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
   color: #666;
 }
 @media screen and (min-width: 1024px) {
@@ -346,20 +349,20 @@ footer {
 }
 .alert {
   position: absolute;
-  width: 26rpx;
-  height: 13rpx;
+  width: 520rpx;
+  height: 260rpx;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: .5rpx;
+  border-radius: 5rpx;
   left: 50%;
   top: 20%;
-  margin-left: -13rpx;
+  margin-left: -260rpx;
   background: white;
 }
 .alertContent {
-  font-size: 2rpx;
+  font-size: 40rpx;
   color: #31b0d5;
   text-align: center;
-  margin-top: 3rpx;
+  margin-top: 60rpx;
 }
 .alertBtn {
   position: absolute;
@@ -368,15 +371,20 @@ footer {
   text-decoration: none;
   width: 100%;
   text-align: center;
-  font-size: 1.5rpx;
-  height: 3rpx;
-  line-height: 3rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: .5rpx;
+  border-radius: 10rpx;
   background: #04BE02;
   color: white;
 }
 .selectMode {
   text-align: center;
-  font-size: 1.5rpx;
+  font-size: 30rpx;
+}
+
+.picker-label{
+  display: inline-block;
+  margin-right: 20rpx;
 }
